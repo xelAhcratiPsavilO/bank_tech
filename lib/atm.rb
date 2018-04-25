@@ -6,4 +6,19 @@ class Atm
     puts 'Credit || Debit || Statement'
   end
 
+  def confirm
+    @op = operation
+    if (@op == 'Credit') or (@op == 'Debit') or (@op == 'Statement')
+      p "#{@op} selected"
+    else
+      fail 'Option selected not available'
+    end
+  end
+
+  private
+
+  def operation
+    gets.chomp
+  end
+
 end
