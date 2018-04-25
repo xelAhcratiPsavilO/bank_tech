@@ -29,7 +29,7 @@ class Account
   end
 
   def body
-    @history.each { |transaction| puts transaction }
+    @history.reverse.each { |transaction| puts transaction }
   end
 
 end
