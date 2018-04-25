@@ -7,4 +7,9 @@ class Account
     @history = []
   end
 
+  def make_deposit(deposit_instance, amount)
+    @balance += amount
+    @history << deposit_instance
+  end
+
 end

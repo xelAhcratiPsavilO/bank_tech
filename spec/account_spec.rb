@@ -16,4 +16,16 @@ describe Account do
     end
   end
 
+  describe '#make_deposit' do
+    it 'adds money to the balance' do
+      account.make_deposit('deposit_instance', 50)
+      expect(account.balance).to eq 50
+    end
+
+    it 'adds transaction to the history' do
+      account.make_deposit('deposit_instance', 50)
+      expect(account.history).to eq ['deposit_instance']
+    end
+  end
+
 end
