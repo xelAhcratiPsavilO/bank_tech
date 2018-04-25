@@ -18,13 +18,35 @@ describe Account do
 
   describe '#make_deposit' do
     it 'adds money to the balance' do
-      account.make_deposit('deposit_instance', 50)
+      account.make_deposit(50)
       expect(account.balance).to eq 50
     end
 
     it 'adds transaction to the history' do
-      account.make_deposit('deposit_instance', 50)
-      expect(account.history).to eq ['deposit_instance']
+      account.make_deposit(50)
+      expect(account.history).to eq [['50 || || 50']]
+    end
+  end
+
+  describe '#make_withdrawl' do
+    it 'deducts money to the balance' do
+      account.make_deposit(100)
+      account.make_withdrawl(50)
+      expect(account.balance).to eq 50
+    end
+
+    it 'adds transaction to the history' do
+      account.make_deposit(100)
+      account.make_withdrawl(50)
+      expect(account.history).to include([' || 50 || 50'])
+    end
+  end
+
+  describe '#print_statement' do
+    it 'displays the operations' do
+      account.make_deposit(1000)
+      expected = "credit || debit || balance\n1000 || || 1000\n"
+      expect { account.print_statement } .to output(expected).to_stdout
     end
   end
 

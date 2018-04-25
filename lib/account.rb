@@ -7,9 +7,29 @@ class Account
     @history = []
   end
 
-  def make_deposit(deposit_instance, amount)
+  def make_deposit(amount)
     @balance += amount
-    @history << deposit_instance
+    @history << [amount.to_s + ' ||' + nil.to_s + ' || ' + @balance.to_s]
+  end
+
+  def make_withdrawl(amount)
+    @balance -= amount
+    @history << [nil.to_s + ' || ' + amount.to_s + ' || ' + @balance.to_s]
+  end
+
+  def print_statement
+    header
+    body
+  end
+
+  private
+
+  def header
+    puts 'credit || debit || balance'
+  end
+
+  def body
+    @history.each { |transaction| puts transaction }
   end
 
 end
