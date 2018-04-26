@@ -9,12 +9,12 @@ class Account
 
   def make_deposit(amount)
     @balance += amount
-    @history << [amount.to_s + ' ||' + nil.to_s + ' || ' + @balance.to_s]
+    @history << [Time.now.strftime('%x') + ' || '  + amount.to_s + ' ||' + nil.to_s + ' || ' + @balance.to_s]
   end
 
   def make_withdrawl(amount)
     @balance -= amount
-    @history << [nil.to_s + ' || ' + amount.to_s + ' || ' + @balance.to_s]
+    @history << [Time.now.strftime('%x') + ' ||'  + nil.to_s + ' || ' + amount.to_s + ' || ' + @balance.to_s]
   end
 
   def print_statement
@@ -25,7 +25,7 @@ class Account
   private
 
   def header
-    puts 'credit || debit || balance'
+    puts 'date || credit || debit || balance'
   end
 
   def body
