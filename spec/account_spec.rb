@@ -18,26 +18,26 @@ describe Account do
 
   describe '#deposit' do
     it 'adds money to the balance' do
-      account.deposit(Time.parse('02/04/2018'), 50)
+      account.deposit('02/04/2018', 50)
       expect(account.balance).to eq 50
     end
 
     it 'adds transaction to the history' do
-      account.deposit(Time.parse('02/04/2018'), 50)
+      account.deposit('02/04/2018', 50)
       expect(account.history.length).to eq 1
     end
   end
 
   describe '#withdrawl' do
     it 'deducts money to the balance' do
-      account.deposit(Time.parse('02/04/2018'),100)
-      account.withdrawl(Time.parse('02/04/2018'),50)
+      account.deposit('02/04/2018',100)
+      account.withdrawl('02/04/2018',50)
       expect(account.balance).to eq 50
     end
 
     it 'adds transaction to the history' do
-      account.deposit(Time.parse('02/04/2018'),100)
-      account.withdrawl(Time.parse('02/04/2018'),50)
+      account.deposit('02/04/2018',100)
+      account.withdrawl('02/04/2018',50)
       expect(account.history.length).to eq 2
     end
   end

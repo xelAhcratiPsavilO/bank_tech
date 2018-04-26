@@ -3,11 +3,11 @@ require 'credit'
 describe Credit do
 
   before(:each) do
-    @credit = Credit.new(Time.parse('02/04/2018'), 500, 800)
+    @credit = Credit.new('02/04/2018', 500, 800)
   end
   describe '#new' do
     it 'initializes date' do
-      expect(@credit.date).to eq Time.parse('02/04/2018')
+      expect(@credit.date).to eq('02/04/2018')
     end
     it 'initializes amount' do
       expect(@credit.amount).to eq 500

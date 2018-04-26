@@ -1,3 +1,5 @@
+require_relative 'credit'
+require_relative 'debit'
 class Account
 
   attr_reader :balance, :history, :transaction
