@@ -42,13 +42,4 @@ describe Account do
     end
   end
 
-  describe '#print_statement' do
-    it 'displays the operations' do
-      account.make_deposit(1000)
-      expected = "date || credit || debit || balance\n" +
-      Time.now.strftime('%x') + " || 1000 || || 1000\n"
-      expect { account.print_statement } .to output(expected).to_stdout
-    end
-  end
-
 end
