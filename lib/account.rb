@@ -1,24 +1,22 @@
 class Account
 
-  attr_reader :balance, :history
+  attr_reader :balance, :history, :transaction
 
-  def initialize
+  def initialize(debit = Debit, credit = Credit)
     @balance = 0
     @history = []
+    @debit = debit
+    @credit = credit
   end
 
-  def make_deposit(amount)
+  def deposit(date, amount)
     @balance += amount
-    @history << [Time.now.strftime('%x') +
-       ' || '  + amount.to_s + ' ||' +
-       nil.to_s + ' || ' + @balance.to_s]
+    @history << @debit.new(date, amount, @balance)
   end
 
-  def make_withdrawl(amount)
+  def withdrawl(date, amount)
     @balance -= amount
-    @history << [Time.now.strftime('%x') +
-       ' ||'  + nil.to_s + ' || ' + amount.to_s +
-       ' || ' + @balance.to_s]
+    @history << @credit.new(date, amount, @balance)
   end
 
 end

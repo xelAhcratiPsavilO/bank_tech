@@ -1,4 +1,3 @@
-require 'transaction'
 require 'statement'
 
 class Atm
