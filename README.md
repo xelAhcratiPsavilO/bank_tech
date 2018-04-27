@@ -13,11 +13,10 @@ The areas of focus are:
 * Account statement (date, amount, balance) printing.
 * Data can be kept in memory (it doesn't need to be stored to a database or anything).
 ### Must have
-**Given** a client makes a deposit of 1000 on 10-01-2012  
-**And** a deposit of 2000 on 13-01-2012  
-**And** a withdrawal of 500 on 14-01-2012  
-**When** she prints her bank statement  
-**Then** the client would see:
+* Given a client makes a deposit of 1000 on 10-01-2012.
+* A deposit of 2000 on 13-01-2012.
+* A withdrawal of 500 on 14-01-2012.
+* When the client prints the bank statement, then the client would see:
 ```
 date || credit || debit || balance
 14/01/2012 || || 500.00 || 2500.00
@@ -46,7 +45,8 @@ The criteria followed to self-evaluate the work done is grouped into four sectio
 ## Sources of information 📚
 Information on the quality indicators can be found in the section bellow:
 ### Quality indicators
-The facts are here: (substitute this for a screenshot).
+The facts are here:
+![Alt text](/public/quality.png)
 ## Contributing 🎭
 Please contact the author for details on the process for submitting pull requests to us.
 

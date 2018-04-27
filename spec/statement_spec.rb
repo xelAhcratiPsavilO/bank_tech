@@ -3,7 +3,6 @@ require 'debit'
 require 'credit'
 
 describe Statement do
-
   let(:statement) { subject }
   let(:credit) { double :credit }
   let(:debit) { double :debit }
@@ -25,5 +24,4 @@ describe Statement do
       expect { statement.display(history) }.to output(expected).to_stdout
     end
   end
-
 end

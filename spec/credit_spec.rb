@@ -1,7 +1,6 @@
 require 'credit'
 
 describe Credit do
-
   before(:each) do
     @credit = Credit.new('02/04/2018', 500, 800)
   end
@@ -16,5 +15,4 @@ describe Credit do
       expect(@credit.balance).to eq 800
     end
   end
-
 end

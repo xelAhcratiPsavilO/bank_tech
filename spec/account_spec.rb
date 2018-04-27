@@ -1,7 +1,6 @@
 require 'account'
 
 describe Account do
-
   let(:account) { subject }
 
   describe '#balance' do
@@ -21,7 +20,6 @@ describe Account do
       account.deposit('02/04/2018', 50)
       expect(account.balance).to eq 50
     end
-
     it 'adds transaction to the history' do
       account.deposit('02/04/2018', 50)
       expect(account.history.length).to eq 1
@@ -30,16 +28,14 @@ describe Account do
 
   describe '#withdrawal' do
     it 'deducts money to the balance' do
-      account.deposit('02/04/2018',100)
-      account.withdrawal('02/04/2018',50)
+      account.deposit('02/04/2018', 100)
+      account.withdrawal('02/04/2018', 50)
       expect(account.balance).to eq 50
     end
-
     it 'adds transaction to the history' do
-      account.deposit('02/04/2018',100)
-      account.withdrawal('02/04/2018',50)
+      account.deposit('02/04/2018', 100)
+      account.withdrawal('02/04/2018', 50)
       expect(account.history.length).to eq 2
     end
   end
-
 end
