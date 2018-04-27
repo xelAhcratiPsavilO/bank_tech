@@ -13,12 +13,12 @@ class Account
 
   def deposit(date, amount)
     @balance += amount
-    @history << @debit.new(date, amount, @balance)
+    @history << @credit.new(date, amount, @balance)
   end
 
-  def withdrawl(date, amount)
+  def withdrawal(date, amount)
     @balance -= amount
-    @history << @credit.new(date, amount, @balance)
+    @history << @debit.new(date, amount, @balance)
   end
 
 end

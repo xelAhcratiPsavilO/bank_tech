@@ -28,16 +28,16 @@ describe Account do
     end
   end
 
-  describe '#withdrawl' do
+  describe '#withdrawal' do
     it 'deducts money to the balance' do
       account.deposit('02/04/2018',100)
-      account.withdrawl('02/04/2018',50)
+      account.withdrawal('02/04/2018',50)
       expect(account.balance).to eq 50
     end
 
     it 'adds transaction to the history' do
       account.deposit('02/04/2018',100)
-      account.withdrawl('02/04/2018',50)
+      account.withdrawal('02/04/2018',50)
       expect(account.history.length).to eq 2
     end
   end

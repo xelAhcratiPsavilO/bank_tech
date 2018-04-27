@@ -21,12 +21,12 @@ class Statement
     end
   end
 
-  def body_for_credit(credit)
-    puts credit.date + ' || ' + credit.amount + ' || || ' + credit.balance
+  def body_for_credit(cred)
+    puts cred.date + ' || ' + cred.amount.to_s + ' || || ' + cred.balance.to_s
   end
 
-  def body_for_debit(debit)
-    puts debit.date + ' || || ' + debit.amount + ' || ' + debit.balance
+  def body_for_debit(deb)
+    puts deb.date + ' || || ' + deb.amount.to_s + ' || ' + deb.balance.to_s
   end
 
 end
