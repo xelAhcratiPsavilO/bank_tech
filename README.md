@@ -46,6 +46,7 @@ The criteria followed to self-evaluate the work done is grouped into four sectio
 Information on the quality indicators can be found in the section bellow:
 ### Quality indicators
 The facts are here:
+
 ![Alt text](/public/quality.png)
 ## Contributing 🎭
 Please contact the author for details on the process for submitting pull requests to us.
